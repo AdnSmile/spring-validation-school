@@ -14,6 +14,4 @@ interface MataPelajaranService {
     fun updateMapel(id: Int, mapel: ReqMataPelajaran): MataPelajaran
 
     fun deleteMapel(id: Int)
-
-    fun mapelExists(nama: String): Boolean
 }

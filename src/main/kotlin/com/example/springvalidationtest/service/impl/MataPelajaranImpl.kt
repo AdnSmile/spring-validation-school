@@ -6,17 +6,21 @@ import com.example.springvalidationtest.exception.DuplicateException
 import com.example.springvalidationtest.exception.NotFoundException
 import com.example.springvalidationtest.repository.MataPelajaranRepository
 import com.example.springvalidationtest.service.MataPelajaranService
+import com.example.springvalidationtest.validation.ValidationUtil
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 
 @Service
 class MataPelajaranImpl(
-    val mapelRepository: MataPelajaranRepository
+    val mapelRepository: MataPelajaranRepository,
+    val validationUtil: ValidationUtil
 ) : MataPelajaranService {
 
     override fun saveMapel(mapel: ReqMataPelajaran): MataPelajaran {
 
-        if (mapelRepository.existsByNamaMataPelajaran(mapel.namaMataPelajaran)) {
+        validationUtil.validate(mapel)
+
+        if (mapelRepository.existsByNamaMataPelajaran(mapel.namaMataPelajaran!!)) {
             throw DuplicateException("Mata Pelajaran sudah ada")
         }
 
@@ -48,7 +52,9 @@ class MataPelajaranImpl(
 
         val getMapel = findById(id)
 
-        if (mapelRepository.existsByNamaMataPelajaran(mapel.namaMataPelajaran)) {
+        validationUtil.validate(mapel)
+
+        if (mapelRepository.existsByNamaMataPelajaran(mapel.namaMataPelajaran!!)) {
             throw DuplicateException("Mata Pelajaran sudah ada")
         }
 
@@ -66,11 +72,6 @@ class MataPelajaranImpl(
         val getMapel = findById(id)
 
         mapelRepository.delete(getMapel)
-    }
-
-    override fun mapelExists(nama: String): Boolean {
-
-        return mapelRepository.existsByNamaMataPelajaran(nama)
     }
 
     private fun findById(id: Int): MataPelajaran {

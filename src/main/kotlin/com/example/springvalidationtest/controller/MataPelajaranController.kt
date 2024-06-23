@@ -28,7 +28,7 @@ class MataPelajaranController(
         return ResponseEntity.ok(
             BaseResponse(
                 status = "T",
-                message = "Berhasil tambah data Mata Pelajaran",
+                message = "Berhasil tambah data mata pelajaran",
                 data = response
             )
         )
@@ -42,7 +42,7 @@ class MataPelajaranController(
         return ResponseEntity.ok(
             BaseResponse(
                 status = "T",
-                message = "Berhasil update data id $id Mata Pelajaran",
+                message = "Berhasil update data id $id mata pelajaran",
                 data = response
             )
         )
@@ -56,7 +56,7 @@ class MataPelajaranController(
         return ResponseEntity.ok(
             BaseResponse(
                 status = "T",
-                message = "Semua data Mata Pelajaran",
+                message = "Semua data mata pelajaran",
                 data = response
             )
         )
@@ -70,7 +70,7 @@ class MataPelajaranController(
         return ResponseEntity.ok(
             BaseResponse(
                 status = "T",
-                message = "Tampil data Mata Pelajaran id $id",
+                message = "Tampil data mata pelajaran id $id",
                 data = response
             )
         )
@@ -84,7 +84,7 @@ class MataPelajaranController(
         return ResponseEntity.ok(
             BaseResponse(
                 status = "T",
-                message = "Berhasil hapus data Mata Pelajaran id $id",
+                message = "Berhasil hapus data mata pelajaran id $id",
                 data = null
             )
         )
