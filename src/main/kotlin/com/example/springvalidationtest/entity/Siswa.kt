@@ -28,6 +28,9 @@ data class Siswa(
     @JsonProperty("tgl_lahir")
     var tglLahir: Date?,
 
+    @JsonProperty("nik")
+    var nik: String?,
+
     @ManyToOne
     @JoinColumn(name = "id_kelas")
     @JsonProperty("kelas")
