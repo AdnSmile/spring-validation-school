@@ -26,5 +26,5 @@ data class WaliKelas(
 
     @JsonIgnore
     @OneToOne(mappedBy = "waliKelas", cascade = [CascadeType.ALL], orphanRemoval = true)
-    val kelas: Kelas?
+    var kelas: Kelas?
 )

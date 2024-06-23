@@ -14,7 +14,7 @@ data class Kelas(
     val idKelas: Int? = null,
 
     @JsonProperty("nama_kelas")
-    val namaKelas: String?,
+    var namaKelas: String?,
 
     @OneToOne
     @JoinColumn(name = "id_wali_kelas")
@@ -23,5 +23,5 @@ data class Kelas(
 
     @JsonIgnore
     @OneToMany(mappedBy = "kelas", cascade = [CascadeType.ALL], orphanRemoval = true)
-    val siswa: List<Siswa>
+    val siswa: List<Siswa>?
 )

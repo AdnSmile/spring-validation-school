@@ -1,7 +1,6 @@
 package com.example.springvalidationtest.service.impl
 
 import com.example.springvalidationtest.dto.request.ReqWaliKelas
-import com.example.springvalidationtest.entity.MataPelajaran
 import com.example.springvalidationtest.entity.WaliKelas
 import com.example.springvalidationtest.exception.DuplicateException
 import com.example.springvalidationtest.exception.NotFoundException
@@ -86,7 +85,7 @@ class WaliKelasImpl(
     }
 
     private fun findById(id: Int): WaliKelas {
-        return waliKelasRepository.findByIdOrNull(id) ?: throw NotFoundException("Wali kelas tidak ditemukan")
+        return waliKelasRepository.findByIdOrNull(id) ?: throw NotFoundException("Wali kelas dengan id $id tidak ditemukan")
     }
 
 }

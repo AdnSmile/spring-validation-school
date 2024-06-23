@@ -75,6 +75,6 @@ class MataPelajaranImpl(
     }
 
     private fun findById(id: Int): MataPelajaran {
-        return mapelRepository.findByIdOrNull(id) ?: throw NotFoundException("Mata Pelajaran tidak ditemukan")
+        return mapelRepository.findByIdOrNull(id) ?: throw NotFoundException("Mata Pelajaran dengan id: $id tidak ditemukan")
     }
 }
