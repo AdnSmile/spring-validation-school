@@ -1,5 +1,5 @@
 # Spring Boot RESTful API with validation  
-This is a sample of how implements validation for RESTful API in Spring Boot Kotlin and also with relation database in the entity.
+This is a sample of how implements validation for RESTful API in Spring Boot Kotlin and also with relational database in the entity.
 
 ## Prerequisite
 - Java JDK (v8+)
